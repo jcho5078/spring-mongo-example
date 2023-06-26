@@ -21,8 +21,8 @@ public class UserController {
     }
 
     @GetMapping("/find")
-    public String test2(Map<String, String> param){
-        User result = userRepositiory.findById(param.get("id")).get();
+    public String test2(@RequestParam(value = "id") String id){
+        User result = userRepositiory.findById(id).get();
 
         return result.toString();
     }
@@ -35,8 +35,8 @@ public class UserController {
     }
 
     @GetMapping("/findByName")
-    public String test4(Map<String, String> param){
-        User result = userRepositiory.findByName(param.get("name"));
+    public String test4(@RequestParam(value = "id") String id){
+        User result = userRepositiory.findByName(id);
 
         return result.toString();
     }
